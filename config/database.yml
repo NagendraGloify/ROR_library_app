@@ -27,7 +27,7 @@ development:
   pool: 5
   username: postgres
   password: 12345
-  database: library_app
+  database: git_ror_library_app
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

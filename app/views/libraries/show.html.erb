@@ -22,7 +22,7 @@ if @book.empty?
     <h6 class="card-subtitle mb-2 text-muted">updated date : <%= @library.updated_at %> </h6> <br>
     <hr>
    
-<%= link_to "Edit this library", edit_book_path(@library) , class: "card-link" %>
+<%= link_to "Edit this library", edit_library_path(@library) , class: "card-link" %>
 
    <%= link_to "Back to books", books_path , class: "card-link"%>
 
