@@ -1,0 +1,36 @@
+<%= form_with(model: library) do |form| %>
+  <% if library.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(library.errors.count, "error") %> prohibited this library from being saved:</h2>
+
+      <ul>
+        <% library.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :library_name, style: "display: block" %>
+    <%= form.text_field :library_name %>
+  </div>
+
+  <div>
+    <%= form.label :opening_time, style: "display: block" %>
+    <%= form.time_field :opening_time %>
+  </div>
+
+  <div>
+    <%= form.label :closing_time, style: "display: block" %>
+    <%= form.time_field :closing_time %>
+  </div>
+
+  <div>
+       <%= form.number_field :user_id, required: true, class: 'form-control', type: :hidden , value:current_user.id if current_user   %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

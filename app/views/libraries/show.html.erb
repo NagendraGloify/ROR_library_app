@@ -1,0 +1,33 @@
+<%
+
+if @book.empty?
+      book_value = 'No books found' 
+       count_book = 0
+   else 
+   count_book = @book.count 
+  book_value =  @book.join(' , ')
+ #  book_value = @book
+   end
+
+%>
+
+<p style="color: green"><%= notice %></p>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"> <%= @library.library_name %> </h5>
+    <h6 class="card-subtitle mb-2 text-muted mb-5"> <%= @library.user_id %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted mb-5"> Number of books in the library : <%= count_book %></h6>
+    <h6 class="card-subtitle mb-2 text-muted mb-5"> <span class="text-primary">Books in the library</span> : <%=  book_value %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted"> Created date : <%= @library.created_at %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted">updated date : <%= @library.updated_at %> </h6> <br>
+    <hr>
+   
+<%= link_to "Edit this library", edit_book_path(@library) , class: "card-link" %>
+
+   <%= link_to "Back to books", books_path , class: "card-link"%>
+
+    <%= button_to "Destroy this library", @library, method: :delete , class: "btn btn-danger btn-sm mt-5 "%>
+
+  
+  </div>
+</div>

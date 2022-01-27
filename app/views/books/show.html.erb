@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<% user = User.find_by(id: @book.library_id) %>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"> <%= @book.book_name %> </h5>
+    <h6 class="card-subtitle mb-2 text-muted mb-5"> <%= @book.author_name %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted mb-5"> <%= user.email %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted mb-5"> <%= @book.library_name %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted mb-5"> language : <%= @book.language %> </h6>
+
+    <h6 class="card-subtitle mb-2 text-muted"> Created date : <%= @book.created_at %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted">updated date : <%= @book.updated_at %> </h6> <br>
+    <hr>
+   
+<%= link_to "Edit this book", edit_book_path(@book) , class: "card-link" %>
+
+   <%= link_to "Back to books", books_path , class: "card-link"%>
+
+    <%= button_to "Destroy this book", @book, method: :delete , class: "btn btn-danger btn-sm mt-5 "%>
+
+  
+  </div>
+</div>

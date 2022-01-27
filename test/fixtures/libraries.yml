@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  library_name: MyString
+  opening_time: 2022-01-26 16:34:20
+  closing_time: 2022-01-26 16:34:20
+  user_id: 1
+
+two:
+  library_name: MyString
+  opening_time: 2022-01-26 16:34:20
+  closing_time: 2022-01-26 16:34:20
+  user_id: 1
